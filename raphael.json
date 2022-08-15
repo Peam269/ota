@@ -1,13 +1,13 @@
 {
   "response": [
     {
-      "datetime": ,
-      "filename": ,
-      "id": ,
-      "romtype": ,
-      "size": ,
-      "url": ,
-      "version":
+      "datetime": 1660507512,
+      "filename": "Bliss-v15.7-raphael-UNOFFICIAL-gapps-20220814.zip",
+      "id": "4f85812d1e0a54c6e391317008fecc89e1ef13026dab172905826081c0c073ba",
+      "romtype": "unofficial",
+      "size": 1979228500,
+      "url": "https://github.com/Peam269/bliss-ota/releases/download/BlissROM_v15.7-20220814/Bliss-v15.7-raphael-UNOFFICIAL-gapps-20220814.zip",
+      "version": "v15.7"
     }
   ]
 }

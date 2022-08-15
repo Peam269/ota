@@ -1,6 +1,9 @@
 #!/bin/bash
+if [[ ($1 == -y) ]]; then set -- "" "$1"; fi
+if [ -z "$1" ]; then
 echo "Where is your ROM source-code located at? (please type the full path)"
 read ROMPATH
+else ROMPATH=$1; fi
 REPO=https://github.com/Peam269/bliss-ota
 BUILDS=~/bliss-ota
 ZIPPATH="$ROMPATH"/out/target/product/raphael
@@ -16,8 +19,8 @@ ROMTYPE=$(echo "$ZIPPATH"/$FILENAME | cut -f4 -d '-')
 SIZE=$(du -b "$ZIPPATH"/$FILENAME | cut -f1 -d '	')
 VERSION=$(echo "$ZIPPATH"/$FILENAME | cut -f2 -d '-')
 DATE=$(echo "$ZIPPATH"/${FILENAME%.*} | cut -f6 -d '-')
-TAG=BlissROM_${VERSION}-${DATE}
-URL="$REPO/releases/download/${TAG}/${FILENAME}"
+TAG=BlissROM_$VERSION-$DATE
+URL="$REPO/releases/download/$TAG/$FILENAME"
 
 echo "datetime": $DATETIME,
 echo "filename": "$FILENAME",
@@ -45,17 +48,23 @@ mv "$ZIPPATH"/$FILENAME "$BUILDS"/ && mv "$ZIPPATH"/${FILENAME}.sha256 "$BUILDS"
 EOM
 
 # Push update to GitHub
-echo "============================================"
-read -r -p "Do you want to upload the build? [y/N] " response
-case "$response" in
-    [yY][eE][sS]|[yY]) 
-	nano "$BUILDS"/changelog.md
-	git -C "$BUILDS" add raphael.json changelog.md
-	git -C "$BUILDS" commit -m raphael_${DATE}
-	cd "$BUILDS"/ && gh release create $TAG -F changelog.md "$BUILDS"/$FILENAME --target master && git -C "$BUILDS" push
-	echo "Build is released!"
-        ;;
-    *)
-        echo "Build not released."
-        ;;
-esac
+uploadbuild(){
+  nano "$BUILDS"/changelog.md
+  git -C "$BUILDS" add raphael.json changelog.md
+  git -C "$BUILDS" commit -m raphael_$DATE
+  cd "$BUILDS"/ && gh release create $TAG -F changelog.md "$BUILDS"/$FILENAME --target master && git -C "$BUILDS" push origin master
+  echo "Build is released!"
+}
+releaseprompt(){
+  echo "============================================"
+  read -r -p "Do you want to upload the build? [y/N] " response
+  case "$response" in
+      [yY][eE][sS]|[yY]) 
+	  uploadbuild
+          ;;
+      *)
+          echo "Build not released."
+          ;;
+  esac
+}
+if [[ ($2 == -y) ]]; then uploadbuild; else releaseprompt; fi

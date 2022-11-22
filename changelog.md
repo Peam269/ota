@@ -1,9 +1,13 @@
 - Update to Android 13 (BlissROM 16.1)
-- latest SP
+- latest November Security Patch
 - Now supports OTA (Over-The-Air) Updates
+- Switched to Bool-X Kernel (thanks to @OnettBoots)
 
-- Support for Screen-Off FOD
-- Enable Smart Charging
-- Enable Battery Health
-- Enable Battery charging cycle counts
-- Enable Live Display
+- Include ViPER4AndroidFX into the ROM
+- Include LMC8.4 into the ROM
+
+- SOON: Support for Screen-Off FOD
+- SOON: Enable Live Display
+- SOON: Enable Smart Charging
+- SOON: Enable Battery Health
+- SOON: Enable Battery charging cycle counts

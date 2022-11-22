@@ -1,3 +1,5 @@
+- Update to Android 13 (BlissROM 16.1)
+- latest SP
 - Now supports OTA (Over-The-Air) Updates
 
 - Support for Screen-Off FOD

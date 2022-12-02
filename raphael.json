@@ -1,12 +1,12 @@
 {
   "response": [
     {
-      "datetime": 1669184221,
-      "filename": "Bliss-v16.1-raphael-UNOFFICIAL-gapps-20221123.zip",
-      "id": "5a80085faedec79cea21f11ef22b45bec15792ebea29010cba8e1ebe1b788426",
+      "datetime": 1669970739,
+      "filename": "Bliss-v16.1-raphael-UNOFFICIAL-gapps-20221202.zip",
+      "id": "2c053fef70c66a895ce2d5bf7fdac1130d51cc15005ccb9c0c5888fab79afceb",
       "romtype": "unofficial",
-      "size": 1868528926,
-      "url": "https://github.com/Peam269/bliss-ota/releases/download/BlissROM_v16.1-20221123/Bliss-v16.1-raphael-UNOFFICIAL-gapps-20221123.zip",
+      "size": 2056958315,
+      "url": "https://github.com/Peam269/bliss-ota/releases/download/BlissROM_v16.1-20221202/Bliss-v16.1-raphael-UNOFFICIAL-gapps-20221202.zip",
       "version": "v16.1"
     }
   ]

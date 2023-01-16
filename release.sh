@@ -21,7 +21,7 @@ JSON="$BUILDS/${ROMNAME,,}/$ROMVARIANT/${DEVICE}.json"
 SIZE=$(du -b "$ZIPPATH"/$FILENAME | cut -f1 -d '	')
 VERSION=$(echo $FILENAME | cut -f2 -d '-')
 DATE=$(echo ${FILENAME%.*} | cut -f6 -d '-')
-TAG=BlissROM_$VERSION_$ROMVARIANT-$DATE
+TAG=BlissROM_$VERSION-$ROMVARIANT-$DATE
 URL="$REPO/releases/download/$TAG/$FILENAME"
 
 echo "datetime": $DATETIME,
@@ -55,7 +55,7 @@ uploadbuild(){
   mv "$ZIPPATH"/$FILENAME "$BUILDS"/${ROMNAME,,}/$ROMVARIANT/ && mv "$ZIPPATH"/${FILENAME}.sha256 "$BUILDS"/${ROMNAME,,}/$ROMVARIANT/
 
   git -C "$BUILDS" add ${ROMNAME,,}/$ROMVARIANT/raphael.json ${ROMNAME,,}/$ROMVARIANT/changelog.md
-  git -C "$BUILDS" commit -m raphael_$DATE
+  git -C "$BUILDS" commit -m raphael_$DATE-$ROMVARIANT
   cd "$BUILDS"/ && gh release create $TAG -F ${ROMNAME,,}/$ROMVARIANT/changelog.md ${ROMNAME,,}/$ROMVARIANT/$FILENAME --target master && git -C "$BUILDS" push origin master
   echo "Build is released!"
 }

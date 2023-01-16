@@ -16,7 +16,7 @@ DATETIME=$(echo "$METADATA" | grep post-timestamp | cut -f2 -d '=')
 ID=$(cut -f1 -d ' ' "$ZIPPATH"/${FILENAME}.sha256)
 ROMTYPE=$(echo "$ZIPPATH"/$FILENAME | cut -f4 -d '-')
 ROMNAME=$(echo "$ZIPPATH"/$FILENAME | cut -f1 -d '-')
-JSON="$BUILDS/$ROMNAME/$ROMTYPE/${DEVICE}.json"
+JSON="$BUILDS/${ROMNAME,,}/$ROMTYPE/${DEVICE}.json"
 SIZE=$(du -b "$ZIPPATH"/$FILENAME | cut -f1 -d '	')
 VERSION=$(echo "$ZIPPATH"/$FILENAME | cut -f2 -d '-')
 DATE=$(echo "$ZIPPATH"/${FILENAME%.*} | cut -f6 -d '-')
@@ -31,7 +31,7 @@ echo "size": $SIZE,
 echo "url": "$URL",
 echo "version": "$VERSION"
 
-mv "$ZIPPATH"/$FILENAME "$BUILDS"/$ROMNAME/$ROMTYPE/ && mv "$ZIPPATH"/${FILENAME}.sha256 "$BUILDS"/$ROMNAME/$ROMTYPE/
+mv "$ZIPPATH"/$FILENAME "$BUILDS"/${ROMNAME,,}/$ROMTYPE/ && mv "$ZIPPATH"/${FILENAME}.sha256 "$BUILDS"/${ROMNAME,,}/$ROMTYPE/
 /bin/cat <<EOM >$JSON
 {
   "response": [
@@ -50,9 +50,9 @@ EOM
 
 # Push update to GitHub
 uploadbuild(){
-  git -C "$BUILDS" add $ROMNAME/$ROMTYPE/raphael.json $ROMNAME/$ROMTYPE/changelog.md
+  git -C "$BUILDS" add ${ROMNAME,,}/$ROMTYPE/raphael.json ${ROMNAME,,}/$ROMTYPE/changelog.md
   git -C "$BUILDS" commit -m raphael_$DATE
-  cd "$BUILDS"/ && gh release create $TAG -F $ROMNAME/$ROMTYPE/changelog.md $ROMNAME/$ROMTYPE/$FILENAME --target master && git -C "$BUILDS" push origin master
+  cd "$BUILDS"/ && gh release create $TAG -F ${ROMNAME,,}/$ROMTYPE/changelog.md ${ROMNAME,,}/$ROMTYPE/$FILENAME --target master && git -C "$BUILDS" push origin master
   echo "Build is released!"
 }
 releaseprompt(){
@@ -60,7 +60,7 @@ releaseprompt(){
   read -r -p "Do you want to upload the build? [y/N] " response
   case "$response" in
       [yY][eE][sS]|[yY])
-          nano "$BUILDS"/$ROMNAME/$ROMTYPE/changelog.md
+          nano "$BUILDS"/${ROMNAME,,}/$ROMTYPE/changelog.md
           uploadbuild
           ;;
       *)

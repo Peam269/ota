@@ -21,7 +21,7 @@ JSON="$BUILDS/${ROMNAME,,}/$ROMVARIANT/${DEVICE}.json"
 SIZE=$(du -b "$ZIPPATH"/$FILENAME | cut -f1 -d '	')
 VERSION=$(echo $FILENAME | cut -f2 -d '-')
 DATE=$(echo ${FILENAME%.*} | cut -f6 -d '-')
-TAG=BlissROM_$VERSION-$DATE
+TAG=BlissROM_$VERSION_$ROMVARIANT-$DATE
 URL="$REPO/releases/download/$TAG/$FILENAME"
 
 echo "datetime": $DATETIME,

@@ -32,7 +32,8 @@ echo "size": $SIZE,
 echo "url": "$URL",
 echo "version": "$VERSION"
 
-mv "$ZIPPATH"/$FILENAME "$BUILDS"/${ROMNAME,,}/$ROMVARIANT/ && mv "$ZIPPATH"/${FILENAME}.sha256 "$BUILDS"/${ROMNAME,,}/$ROMVARIANT/
+if [ ! -d "$BUILDS"/${ROMNAME,,} ]; then mkdir "$BUILDS"/${ROMNAME,,}; fi
+if [ ! -d "$BUILDS"/${ROMNAME,,}/$ROMVARIANT ]; then mkdir "$BUILDS"/${ROMNAME,,}/$ROMVARIANT; fi
 /bin/cat <<EOM >$JSON
 {
   "response": [
@@ -51,6 +52,8 @@ EOM
 
 # Push update to GitHub
 uploadbuild(){
+  mv "$ZIPPATH"/$FILENAME "$BUILDS"/${ROMNAME,,}/$ROMVARIANT/ && mv "$ZIPPATH"/${FILENAME}.sha256 "$BUILDS"/${ROMNAME,,}/$ROMVARIANT/
+
   git -C "$BUILDS" add ${ROMNAME,,}/$ROMVARIANT/raphael.json ${ROMNAME,,}/$ROMVARIANT/changelog.md
   git -C "$BUILDS" commit -m raphael_$DATE
   cd "$BUILDS"/ && gh release create $TAG -F ${ROMNAME,,}/$ROMVARIANT/changelog.md ${ROMNAME,,}/$ROMVARIANT/$FILENAME --target master && git -C "$BUILDS" push origin master

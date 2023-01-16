@@ -1,16 +1,30 @@
-- Update to Android 13 (BlissROM 16.1)
-- latest November Security Patch
+Device changes:
+
+- Android 13 Update (BlissROM 16.3)
+- latest January Security Patch
 - Now supports OTA (Over-The-Air) Updates
 - Switched to Bool-X Kernel (thanks to @OnettBoots)
 
-- Include ViPER4AndroidFX into the ROM
-- Include LMC8.4 into the ROM
+- Build AudioFX equalizer with the ROM
+- Build BSG GCam with the ROM
 
-BIG THANKS TO: @OnettBoots, @anuragbhaumik, @wadiehabib, @DanipunK1
+CREDITS TO @aoleary for the Device Tree
 
 
-- SOON: Support for Screen-Off FOD
-- SOON: Enable Live Display
-- SOON: Enable Smart Charging
-- SOON: Enable Battery Health
-- SOON: Enable Battery charging cycle counts
+
+Source changes:
+
+This week, we’re releasing BlissRoms Typhoon v16.3 The changelog is the following:
+
+- Merged January Security Patches
+- Entire rebase from Dec Patches
+- Added Face Unlock support
+- Inclusion Of Launcher3 in both Gapps and vanilla builds
+- Hidden Apps Feature
+- Per-app Volume
+- Left Volume Panel
+- Addition of Pitch Black Theme
+- Pulse Options in LS and Ambient/AOD panels
+- Ditch the panda style QS for pure light mode
+- Google Photos Unlimited by default
+- Misc Improvements and Fixes

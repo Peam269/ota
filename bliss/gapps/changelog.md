@@ -1,30 +1,29 @@
 Device changes:
 
-- Android 13 Update (BlissROM 16.3)
-- latest January Security Patch
+- Android 13 Update (BlissROM 16.5)
+- March Security Patch (QPR2)
 - Now supports OTA (Over-The-Air) Updates
-- Switched to Bool-X Kernel (thanks to @OnettBoots)
+- Switched to Soviet Kernel (@SOVIET-ANDROID)
 
-- Build AudioFX equalizer with the ROM
-- Build BSG GCam with the ROM
+- New FOD implementation
+- Build ViPER4Android audio mod with the ROM
+- Build BSG 8.7 GCam with the ROM
 
-CREDITS TO @aoleary for the Device Tree
-
-
+CREDITS TO @InVictusXV for the Device Tree
 
 Source changes:
 
-This week, we’re releasing BlissRoms Typhoon v16.3 The changelog is the following:
+This week, we’re releasing BlissRoms Typhoon v16.5 The changelog is the following:
 
-- Merged January Security Patches
-- Entire rebase from Dec Patches
-- Added Face Unlock support
-- Inclusion Of Launcher3 in both Gapps and vanilla builds
-- Hidden Apps Feature
-- Per-app Volume
-- Left Volume Panel
-- Addition of Pitch Black Theme
-- Pulse Options in LS and Ambient/AOD panels
-- Ditch the panda style QS for pure light mode
-- Google Photos Unlimited by default
-- Misc Improvements and Fixes
+  - Merged February Security Patches
+  - Bringing Back A11 QS Style with transparency and icon customizations
+  - Introduction of Aperture Camera as default
+  - Inclusion of dynamic VoLTE and VoWiFi icons
+  - Parallel Space Improvements
+  - Inclusion Of Launcher3 Taskbar completely and other changes
+  - Introduction of LockScreen Media Art Blur and filters
+  - Introduction of App Lock
+  - Bringing back data disabled icon toggles and other statusbar tweaks
+  - Update APNs for some telecos
+  - Redesign the Recents view Style along with task locks to recents.
+  - Misc Improvements and Fixes

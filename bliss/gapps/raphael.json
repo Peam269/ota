@@ -1,13 +1,13 @@
 {
   "response": [
     {
-      "datetime": 1673975977,
-      "filename": "Bliss-v16.3-raphael-UNOFFICIAL-gapps-20230117.zip",
-      "id": "1a85644eae45edd40d8811ed328c9511d8a03445a03da2d4c8d4e1b55b831b90",
+      "datetime": 1680944364,
+      "filename": "Bliss-v16.5-raphael-UNOFFICIAL-gapps-20230408.zip",
+      "id": "d89b1e83ff398af7405f73344442e453e43006f50f5fad013024f8f2a2507395",
       "romtype": "unofficial",
-      "size": 1944273444,
-      "url": "https://github.com/Peam269/ota/releases/download/BlissROM_v16.3-gapps-20230117/Bliss-v16.3-raphael-UNOFFICIAL-gapps-20230117.zip",
-      "version": "v16.3"
+      "size": 2293182977,
+      "url": "https://github.com/Peam269/ota/releases/download/BlissROM_v16.5-gapps-20230408/Bliss-v16.5-raphael-UNOFFICIAL-gapps-20230408.zip",
+      "version": "v16.5"
     }
   ]
 }

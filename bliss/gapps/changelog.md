@@ -9,7 +9,7 @@ Device changes:
 - Build ViPER4Android audio mod with the ROM
 - Build BSG 8.7 GCam with the ROM
 
-CREDITS TO @InVictusXV for the Device Tree
+CREDITS TO @InVictusXV for the base device tree
 
 Source changes:
 

@@ -1,7 +1,7 @@
 Device changes:
 
-- Android 13 Update (BlissROM 16.5)
-- March Security Patch (QPR2)
+- Android 13 Update (BlissROM 16.6)
+- April Security Patch (QPR2)
 - Now supports OTA (Over-The-Air) Updates
 - Switched to Soviet Kernel (@SOVIET-ANDROID)
 

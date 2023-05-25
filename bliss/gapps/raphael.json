@@ -1,13 +1,13 @@
 {
   "response": [
     {
-      "datetime": 1682808396,
-      "filename": "Bliss-v16.6-raphael-UNOFFICIAL-gapps-20230430.zip",
-      "id": "9838d15151b75b2c01f40cbf15080318f8818ce83c0012acfe561fed5fafe582",
+      "datetime": 1684979247,
+      "filename": "Bliss-v16.7-raphael-UNOFFICIAL-gapps-20230525.zip",
+      "id": "73760426c1a2f8f148ce3912846e0e49929c30a1bb2feb3b9f89aed4fce1be77",
       "romtype": "unofficial",
-      "size": 1825583134,
-      "url": "https://gitlab.com/Peam269/ota/raw/master/bliss/gapps/Bliss-v16.6-raphael-UNOFFICIAL-gapps-20230430.zip",
-      "version": "v16.6"
+      "size": 2216969778,
+      "url": "https://gitlab.com/Peam269/ota/raw/master/bliss/gapps/Bliss-v16.7-raphael-UNOFFICIAL-gapps-20230525.zip",
+      "version": "v16.7"
     }
   ]
 }

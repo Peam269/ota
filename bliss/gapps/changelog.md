@@ -1,13 +1,13 @@
 Device changes:
 
-- Android 13 Update (BlissROM 16.6)
-- April Security Patch (QPR2)
+- Android 13 Update (BlissROM 16.7)
+- May Security Patch (QPR2)
 - Now supports OTA (Over-The-Air) Updates
 - Switched to Soviet Kernel (@SOVIET-ANDROID)
 
 - New FOD implementation
 - Build ViPER4Android audio mod with the ROM
-- Build BSG 8.7 GCam with the ROM
+- Build BSG 8.8 GCam with the ROM
 
 CREDITS TO @InVictusXV for the base device tree
 
